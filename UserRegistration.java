@@ -52,7 +52,10 @@ public class UserRegistration {
 	public static void password() {
 		System.out.println("\nEnter the Password");
 		String p = sc.nextLine();
-		if (Pattern.matches("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s)[a-zA-Z0-9]*[^a-zA-Z0-9\\s]{1}[a-zA-Z0-9]*$", p) == true)
+		if (Pattern.matches("^(?=.*[0-9])"
+                + "(?=.*[a-z])(?=.*[A-Z])"
+                + "(?=.*[@#$%^&+=])"
+                + "(?=\\S+$).{8,}$", p) == true)
 			System.out.println("Valid Password");
 		else
 			System.out.println("Invalid Password");
@@ -60,10 +63,10 @@ public class UserRegistration {
 
 	public static void main(String[] args) {
 		System.out.println("यूजर रजिस्ट्रेशन प्रोग्राम में आपका स्वागत है|");
-		firstName();
-		lastName();
-		email();
-		mobile();
+//		firstName();
+//		lastName();
+//		email();
+//		mobile();
 		password();
 	}
 }
